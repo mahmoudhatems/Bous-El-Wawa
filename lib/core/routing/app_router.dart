@@ -7,6 +7,9 @@ import 'package:flutter/material.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {
+    // this argument is passed when using Navigator.pushNamed
+   final arguments = settings.arguments;
+    
     switch (settings.name) {
       case Routes.home:
         return MaterialPageRoute(builder: (_) => HomeScreen());
