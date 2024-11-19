@@ -6,8 +6,16 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Login Screen'),
+      body:Coulmn(
+        children: [
+          Text('Login Screen'),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/home');
+            },
+            child: Text('Login'),
+          ),
+        ],
       ),
     );
 }}
