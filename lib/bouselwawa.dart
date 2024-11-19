@@ -21,7 +21,7 @@ class Bouselwawa extends StatelessWidget {
           primaryColor: ColorsManager.primaryColorTeal,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onboarding,
+        initialRoute: Routes.login,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

@@ -9,5 +9,5 @@ class TextStyles{
   static  TextStyle font14GrayRegular = TextStyle(fontSize: 14.sp, color: ColorsManager.textGray, fontWeight: FontWeight.normal);
   
    static  TextStyle font16WhiteSemiBold = TextStyle(fontSize: 16.sp, color: ColorsManager.white, fontWeight: FontWeight.w500);
-  
+   static  TextStyle font16TealSemiBold = TextStyle(fontSize: 16.sp, color:ColorsManager.primaryColorTeal, fontWeight: FontWeight.w500);
 }
