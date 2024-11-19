@@ -1,6 +1,9 @@
+
+import 'package:bouselwawa/Features/login/widgets/app_logo_and_name.dart';
 import 'package:bouselwawa/core/helpers/strings.dart';
 import 'package:bouselwawa/core/theming/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -9,22 +12,16 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Column(
-        children: [
-           Row( mainAxisAlignment: MainAxisAlignment.center,
+      body:SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(top: 25.h),
+          child: Column(
             children: [
-              SvgPicture.asset("assets/svgs/App Logo.svg")
-            ],),
-            Text(Strings.appTitle, style: TextStyles.font16TealSemiBold,),
-
-            
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/home');
-            },
-            child: Text('Login'),
+              AppLogoAndName(),
+            ],
           ),
-        ],
+        ),
       ),
     );
 }}
+
