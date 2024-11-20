@@ -17,7 +17,13 @@ class LoginScreen extends StatelessWidget {
           padding: EdgeInsets.only(top: 25.h),
           child: Column(
             children: [
-              AppLogoAndName(),
+              const AppLogoAndName(),
+              SizedBox(height: 30.h),
+              Text('Hi, Welcome Back!', style: TextStyles.font20TealSemiBold),
+              Text('Hope you\'re doing fine.', style: TextStyles.font14GrayRegular),
+              
+
+
             ],
           ),
         ),

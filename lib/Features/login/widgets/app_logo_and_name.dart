@@ -22,7 +22,7 @@ class AppLogoAndName extends StatelessWidget {
             SvgPicture.asset("assets/svgs/App Logo.svg")
           ],),
           SizedBox(height: 10.h),
-          Text(Strings.appTitle, style: TextStyles.font18TealSemiBold,),
+          Text(Strings.appTitle, style: TextStyles.font20GrayBold,),
           
       ],
     );
