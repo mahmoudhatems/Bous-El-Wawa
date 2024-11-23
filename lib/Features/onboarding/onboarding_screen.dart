@@ -28,7 +28,7 @@ class OnboardingScreen extends StatelessWidget {
                   Text(
                     'Manage and schedule all of your medical appointments easily with ${Strings.appTitle} to get a new experience.',
                     textAlign: TextAlign.center,
-                    style: TextStyles.font14GrayRegular,
+                    style: TextStyles.font14GrayMoreRegular,
                   ),
                   verticalSpace(30),
                   const GetStartedButton(),
