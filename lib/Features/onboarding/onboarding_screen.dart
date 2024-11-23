@@ -1,6 +1,7 @@
 import 'package:bouselwawa/Features/onboarding/widgets/app_logo_and_name.dart';
 import 'package:bouselwawa/Features/onboarding/widgets/dr_image_and_text.dart';
 import 'package:bouselwawa/Features/onboarding/widgets/get_started_butt.dart';
+import 'package:bouselwawa/core/helpers/spacing.dart';
 import 'package:bouselwawa/core/helpers/strings.dart';
 import 'package:bouselwawa/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class OnboardingScreen extends StatelessWidget {
         child: Column(
           children: [
            const AppLogoAndName(),
-            SizedBox(height: 20.h),
+            verticalSpace(20),
             const DrImageAndText(),
             Padding(
               padding:EdgeInsets.symmetric(horizontal: 30.w),
@@ -29,7 +30,7 @@ class OnboardingScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyles.font14GrayRegular,
                   ),
-                  SizedBox(height: 30.h),
+                  verticalSpace(30),
                   const GetStartedButton(),
                 ],
               ),

@@ -1,5 +1,6 @@
 
 import 'package:bouselwawa/Features/login/widgets/app_logo_and_name.dart';
+import 'package:bouselwawa/core/helpers/spacing.dart';
 import 'package:bouselwawa/core/helpers/strings.dart';
 import 'package:bouselwawa/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -14,17 +15,19 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body:SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(top: 25.h),
-          child: Column(
-            children: [
-              const AppLogoAndName(),
-              SizedBox(height: 30.h),
-              Text('Hi, Welcome Back!', style: TextStyles.font20TealSemiBold),
-              Text('Hope you\'re doing fine.', style: TextStyles.font14GrayRegular),
-              
-
-
-            ],
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const AppLogoAndName(),
+               verticalSpace(30),
+                Text('Hi, Welcome Back!', style: TextStyles.font20TealSemiBold),
+                Text('Hope you\'re doing fine.', style: TextStyles.font14GrayRegular),
+                
+            
+            
+              ],
+            ),
           ),
         ),
       ),
