@@ -3,6 +3,7 @@ import 'package:bouselwawa/Features/login/widgets/app_logo_and_name.dart';
 import 'package:bouselwawa/core/helpers/spacing.dart';
 import 'package:bouselwawa/core/helpers/strings.dart';
 import 'package:bouselwawa/core/theming/styles.dart';
+import 'package:bouselwawa/core/widgets/app_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -15,6 +16,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+final formKey = GlobalKey<FormState>();
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,9 +34,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 Text('Hi, Welcome Back!', style: TextStyles.font20TealSemiBold),
                 Text('Hope you\'re doing fine.', style: TextStyles.font14GrayMoreRegular),
                 verticalSpace(40),
-                 Form(child: Column(
+                 Form(key: formKey,
+                  child: Column(
                   children: [
-                    
+                    AppTextFormField()
                   ],
                  ))
             
