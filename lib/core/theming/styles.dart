@@ -14,5 +14,5 @@ class TextStyles{
    static  TextStyle font20TealSemiBold = TextStyle(fontSize:20.sp, color:ColorsManager.primaryColorTeal, fontWeight: FontWeight.w500);
    static  TextStyle font14LightGrayRegular = TextStyle(fontSize: 18.sp, color: ColorsManager.lightTextGray, fontWeight: FontWeight.normal);
     static  TextStyle font14TealDark = TextStyle(fontSize: 14.sp, color: ColorsManager.primaryColorTealDark, fontWeight: FontWeight.normal);
-    
+       static  TextStyle font16TealSemiBold = TextStyle(fontSize:16.sp, color:ColorsManager.primaryColorTeal, fontWeight: FontWeight.w500);
 }
