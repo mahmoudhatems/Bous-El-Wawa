@@ -20,6 +20,4 @@ static const String loadingMessage = "loadingMessage";
 static const String retryAgainMessage = "retryAgainMessage";
 static const String ok = "ok";
 static const String conflictError = "conflictError";
-
-
 }
