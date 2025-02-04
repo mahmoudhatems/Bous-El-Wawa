@@ -87,11 +87,3 @@ class _ApiService implements ApiService {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
-
-class ParseErrorLogger {
-  void logError(Object error, StackTrace stackTrace, RequestOptions requestOptions) {
-    print('Error: $error');
-    print('StackTrace: $stackTrace');
-    print('RequestOptions: $requestOptions');
-  }
-}
