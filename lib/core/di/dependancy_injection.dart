@@ -13,7 +13,7 @@ Future <void>setupGetIt() async{
 
     getit.registerLazySingleton <ApiService>(()=>ApiService(dio));
 // LOGIN
-   getit.registerFactory<LoginCubit>(()=>LoginCubit(getit()));
+  getit.registerFactory<LoginCubit>(()=>LoginCubit(getit()));
   getit.registerFactory<LoginRepo>(()=>LoginRepo( getit()));
   // Home
   // getit.registerFactory<HomeCubit>(()=>HomeCubit(getit()));
