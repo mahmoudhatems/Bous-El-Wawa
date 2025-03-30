@@ -1,4 +1,6 @@
 import 'package:bouselwawa/Features/login/logic/cubit/login_cubit.dart';
+import 'package:bouselwawa/Features/login/widgets/password_validation.dart';
+import 'package:bouselwawa/core/helpers/app_regex.dart';
 import 'package:bouselwawa/core/helpers/spacing.dart';
 import 'package:bouselwawa/core/theming/colors.dart';
 import 'package:bouselwawa/core/widgets/app_text_form_field.dart';
@@ -16,12 +18,32 @@ class EmailAndPasswordTextField extends StatefulWidget {
 
 class _EmailAndPasswordTextFieldState extends State<EmailAndPasswordTextField> {
   bool isObscure = true;
+
+  bool hasLowercas = false;
+  bool hasUppercase = false;
+  bool hasNumber = false;
+  bool hasSpecialCharacters = false;
+  bool hasMinLength = false;
+
   late TextEditingController passwordController;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     passwordController = context.read<LoginCubit>().passwordController;
+    setupPasswordControllerListener();
+  }
+
+  void setupPasswordControllerListener() {
+    passwordController.addListener(() {
+      setState(() {
+        hasLowercas = AppRegex.hasLowerCase(passwordController.text);
+        hasUppercase = AppRegex.hasUpperCase(passwordController.text);
+        hasNumber = AppRegex.hasNumber(passwordController.text);
+        hasSpecialCharacters =
+            AppRegex.hasSpecialCharacter(passwordController.text);
+        hasMinLength = AppRegex.hasMinLength(passwordController.text);
+      });
+    });
   }
 
   @override
@@ -33,12 +55,10 @@ class _EmailAndPasswordTextFieldState extends State<EmailAndPasswordTextField> {
           AppTextFormField(
             controller: context.read<LoginCubit>().emailController,
             validator: (value) {
-              if (value == null || value.isEmpty) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isEmailValid(value)) {
                 return 'Please enter your email';
-              } else if (!RegExp(
-                      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
-                  .hasMatch(value)) {
-                return 'Please enter a valid email address';
               }
             },
             hintText: "Email",
@@ -55,7 +75,7 @@ class _EmailAndPasswordTextFieldState extends State<EmailAndPasswordTextField> {
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter your password';
-              } 
+              }
             },
             hintText: "Password",
             obscureText: isObscure,
@@ -81,9 +101,21 @@ class _EmailAndPasswordTextFieldState extends State<EmailAndPasswordTextField> {
             ),
           ),
           verticalSpace(18),
-          
+          PasswordValidation(
+            hasLowercase: hasLowercas,
+            hasUppercase: hasUppercase,
+            hasNumber: hasNumber,
+            hasSpecialCharacters: hasSpecialCharacters,
+            hasMinLength: hasMinLength,
+          ),
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    passwordController.removeListener(() {});
+    super.dispose();
   }
 }
