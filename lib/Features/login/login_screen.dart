@@ -4,6 +4,7 @@ import 'package:bouselwawa/Features/login/widgets/app_logo_and_name.dart';
 import 'package:bouselwawa/Features/login/widgets/email_and_password.dart';
 import 'package:bouselwawa/Features/login/widgets/login_bloc_listener.dart';
 import 'package:bouselwawa/Features/login/widgets/scoial_login.dart';
+import 'package:bouselwawa/core/helpers/extentions.dart';
 import 'package:bouselwawa/core/helpers/spacing.dart';
 import 'package:bouselwawa/core/helpers/strings.dart';
 import 'package:bouselwawa/core/theming/colors.dart';
@@ -40,15 +41,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 Column(
                   children: [
                     const EmailAndPasswordTextField(),
-                    verticalSpace(20),
+                    verticalSpace(10),
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         'Forgot Password? ',
-                        style: TextStyles.font13TealSemiBold,
+                        style: TextStyles.font16BlueSemiBold.copyWith(
+                            fontSize: 14.sp,
+                            color: ColorsManager.primaryColorTealDark),
                       ),
                     ),
-                    verticalSpace(20),
+                    verticalSpace(10),
                     AppTextButton(
                         textStyle: TextStyles.font16WhiteSemiBold,
                         buttonText: "Login",
@@ -73,7 +76,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                           child: Text(
                             'Sign Up',
-                            style: TextStyles.font16TealSemiBold,
+                            style: TextStyles.font16BlueSemiBold.copyWith(
+                            fontSize: 14.sp,
+                            color: ColorsManager.primaryColorTealDark),
                           ),
                         ),
                       ],
@@ -96,10 +101,34 @@ class _LoginScreenState extends State<LoginScreen> {
             password: context.read<LoginCubit>().passwordController.text,
           ));
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please fill in all fields correctly.'),
-        ),
+      // Show error message if the form is not valid
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            backgroundColor: ColorsManager.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.r),
+            ),
+            icon: const Icon(
+              Icons.error_outline,
+              color: ColorsManager.red,
+            ),
+            content: Text('Please fill in all fields',
+                style: TextStyles.font13TealSemiBold),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  context.pop();
+                },
+                child: const Text(
+                  'Got it',
+                  style: TextStyle(color: ColorsManager.primaryColorTeal),
+                ),
+              ),
+            ],
+          );
+        },
       );
     }
   }
