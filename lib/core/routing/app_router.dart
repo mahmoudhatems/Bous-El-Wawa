@@ -2,6 +2,7 @@ import 'package:bouselwawa/Features/home/ui/home_Screen.dart';
 import 'package:bouselwawa/Features/login/logic/cubit/login_cubit.dart';
 import 'package:bouselwawa/Features/login/login_screen.dart';
 import 'package:bouselwawa/Features/onboarding/onboarding_screen.dart';
+import 'package:bouselwawa/Features/register/logic/cubit/cubit/sign_up_cubit.dart';
 import 'package:bouselwawa/Features/register/ui/register_screen.dart';
 import 'package:bouselwawa/core/di/dependancy_injection.dart';
 import 'package:bouselwawa/core/routing/routes.dart';
@@ -23,7 +24,11 @@ class AppRouter {
                   child: const LoginScreen(),
                 ));
       case Routes.register:
-        return MaterialPageRoute(builder: (_) => RegisterScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) =>  getit<SignupCubit>(),
+                  child: RegisterScreen(),
+                ));
       case Routes.onboarding:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
       default:
@@ -33,7 +38,6 @@ class AppRouter {
                     child: Text('No route defined for ${settings.name}'),
                   ),
                 ));
-                
     }
   }
 }

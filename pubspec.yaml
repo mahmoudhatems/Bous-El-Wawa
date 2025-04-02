@@ -36,11 +36,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_bloc: ^8.1.6
-  freezed: ^2.5.7
-  freezed_annotation: ^2.4.4
+  freezed: ^2.4.5
+  freezed_annotation: ^2.4.1
   get_it: ^8.0.2
   json_annotation: ^4.9.0
   dio: ^5.7.0
+  build_runner: ^2.4.7
   retrofit: ^4.4.1
   retrofit_generator: ^9.1.4
   pretty_dio_logger: ^1.4.0
@@ -50,7 +51,8 @@ dependencies:
   cached_network_image: ^3.4.1
   flutter_svg: ^2.0.11
   flutter_screenutil: ^5.9.3
-
+  font_awesome_flutter: ^10.8.0
+  json_serializable: ^6.8.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -68,8 +70,7 @@ flutter_launcher_icons:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
-  json_serializable: ^6.8.0
-  build_runner: ^2.4.13
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
