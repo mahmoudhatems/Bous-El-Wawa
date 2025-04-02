@@ -85,8 +85,9 @@ class _SignupFormState extends State<SignupForm> {
                 onPressed: () {},
                 iconSize: 24.sp,
                 icon:Icon(
-                  Icons.phone,
-                  color: ColorsManager.primaryColorTealDark,
+                  Icons.phone_outlined,
+                  color: ColorsManager.lightTextGray,
+                  size: 20.sp,
                 ),
               ),
             ), 
@@ -102,6 +103,16 @@ class _SignupFormState extends State<SignupForm> {
           ),
           verticalSpace(18),
           AppTextFormField(
+              prefixIcon:AbsorbPointer(
+                absorbing: true,
+                child: IconButton(
+                  onPressed: () {},
+                  iconSize: 24.sp,
+                  icon: SvgPicture.asset(
+                    IconsManager.mailIcon,
+                  ),
+                ),
+              ),
             hintText: 'Email',
             validator: (value) {
               if (value == null ||
@@ -114,6 +125,16 @@ class _SignupFormState extends State<SignupForm> {
           ),
           verticalSpace(18),
           AppTextFormField(
+            prefixIcon:AbsorbPointer(
+              absorbing: true,
+              child: IconButton(
+                onPressed: () {},
+                iconSize: 24.sp,
+                icon: SvgPicture.asset(
+                  IconsManager.passwordIcon,
+                ),
+              ),
+            ),
             controller: context.read<SignupCubit>().passwordController,
             hintText: 'Password',
             obscureText: isPasswordObscureText,
@@ -123,9 +144,14 @@ class _SignupFormState extends State<SignupForm> {
                   isPasswordObscureText = !isPasswordObscureText;
                 });
               },
-              child: Icon(
-                isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
-              ),
+              child:  Icon(
+                  isPasswordObscureText
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                  size: 24.sp,
+                  color: ColorsManager.lightTextGray,
+                  applyTextScaling: true,
+                )
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -135,6 +161,16 @@ class _SignupFormState extends State<SignupForm> {
           ),
           verticalSpace(18),
           AppTextFormField(
+            prefixIcon:AbsorbPointer(
+              absorbing: true,
+              child: IconButton(
+                onPressed: () {},
+                iconSize: 24.sp,
+                icon: SvgPicture.asset(
+                  IconsManager.passwordIcon,
+                ),
+              ),
+            ),
             controller:
                 context.read<SignupCubit>().passwordConfirmationController,
             hintText: 'Password Confirmation',
@@ -147,10 +183,13 @@ class _SignupFormState extends State<SignupForm> {
                 });
               },
               child: Icon(
-                isPasswordConfirmationObscureText
-                    ? Icons.visibility_off
-                    : Icons.visibility,
-              ),
+                  isPasswordObscureText
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
+                  size: 24.sp,
+                  color: ColorsManager.lightTextGray,
+                  applyTextScaling: true,
+                )
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
