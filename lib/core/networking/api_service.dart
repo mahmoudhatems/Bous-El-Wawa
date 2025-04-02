@@ -1,5 +1,7 @@
 import 'package:bouselwawa/Features/login/data/models/login_request.dart';
 import 'package:bouselwawa/Features/login/data/models/login_response.dart';
+import 'package:bouselwawa/Features/register/data/models/sign_up_request_body.dart';
+import 'package:bouselwawa/Features/register/data/models/sign_up_response.dart';
 import 'package:bouselwawa/core/networking/api_constants.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
@@ -22,4 +24,6 @@ abstract class ApiService {
   Future<LoginResponse> login(@Body() LoginRequestBody loginRequestBody);
 
   /// login api request body
+  @POST(ApiConstants.signUp)
+  Future<SignupResponse> signUp(@Body()SignupRequestBody loginRequestBody);
 }

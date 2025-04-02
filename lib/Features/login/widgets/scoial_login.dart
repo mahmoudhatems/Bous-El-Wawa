@@ -2,6 +2,7 @@
 import 'package:bouselwawa/core/helpers/spacing.dart';
 import 'package:bouselwawa/core/helpers/strings.dart';
 import 'package:bouselwawa/core/theming/colors.dart';
+import 'package:bouselwawa/core/theming/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,7 +24,7 @@ class SocialLogin extends StatelessWidget {
               backgroundColor:
                   ColorsManager.textFormFieldBackground,
               child: SvgPicture.asset(
-                Strings.googleIcon,
+                IconsManager.googleIcon,
                 width: 30.w,
               ),
             ),
@@ -33,7 +34,7 @@ class SocialLogin extends StatelessWidget {
                   ColorsManager.textFormFieldBackground,
               radius: 30.r,
               child: SvgPicture.asset(
-                Strings.facebookIcon,
+                IconsManager.facebookIcon,
                 width: 30.w,
               ),
             ),

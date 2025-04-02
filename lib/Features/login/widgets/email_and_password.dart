@@ -3,10 +3,12 @@ import 'package:bouselwawa/Features/login/widgets/password_validation.dart';
 import 'package:bouselwawa/core/helpers/app_regex.dart';
 import 'package:bouselwawa/core/helpers/spacing.dart';
 import 'package:bouselwawa/core/theming/colors.dart';
+import 'package:bouselwawa/core/theming/icons.dart';
 import 'package:bouselwawa/core/widgets/app_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class EmailAndPasswordTextField extends StatefulWidget {
   const EmailAndPasswordTextField({super.key});
@@ -62,11 +64,15 @@ class _EmailAndPasswordTextFieldState extends State<EmailAndPasswordTextField> {
               }
             },
             hintText: "Email",
-            prefixIcon: Icon(
-              Icons.email_outlined,
-              size: 24.sp,
-              color: ColorsManager.lightTextGray,
-              applyTextScaling: true,
+            prefixIcon: AbsorbPointer(
+              absorbing: true,
+              child: IconButton(
+                iconSize: 24.sp,
+                onPressed: () {},
+                icon: SvgPicture.asset(
+                  IconsManager.mailIcon,
+                ),
+              ),
             ),
           ),
           verticalSpace(20),
@@ -93,11 +99,15 @@ class _EmailAndPasswordTextFieldState extends State<EmailAndPasswordTextField> {
                   color: ColorsManager.lightTextGray,
                   applyTextScaling: true,
                 )),
-            prefixIcon: Icon(
-              Icons.lock_outline,
-              size: 24.sp,
-              color: ColorsManager.lightTextGray,
-              applyTextScaling: true,
+            prefixIcon: AbsorbPointer(
+              absorbing: true,
+              child: IconButton(
+                onPressed: () {},
+                iconSize: 24.sp,
+                icon: SvgPicture.asset(
+                  IconsManager.passwordIcon,
+                ),
+              ),
             ),
           ),
           verticalSpace(18),
