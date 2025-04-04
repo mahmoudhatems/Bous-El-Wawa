@@ -1,6 +1,5 @@
 
 import 'package:bouselwawa/core/helpers/spacing.dart';
-import 'package:bouselwawa/core/helpers/strings.dart';
 import 'package:bouselwawa/core/theming/colors.dart';
 import 'package:bouselwawa/core/theming/icons.dart';
 import 'package:flutter/material.dart';
