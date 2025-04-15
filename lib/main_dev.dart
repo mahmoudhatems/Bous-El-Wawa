@@ -13,4 +13,5 @@ void main() async {
     appRouter: AppRouter(),
   ));
   FlutterNativeSplash.remove();
+  print("main_dev");
 }
