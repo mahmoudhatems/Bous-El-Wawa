@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "919703926369",
+    "project_id": "bouselwawa-6f793",
+    "storage_bucket": "bouselwawa-6f793.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:919703926369:android:3e3d3244cf6c663c5e5c20",
+        "android_client_info": {
+          "package_name": "com.example.bouselwawa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYdEPr790pGu6GVGDpD_iu5_86AFpk3Xs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
